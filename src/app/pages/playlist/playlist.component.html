@@ -1,0 +1,80 @@
+<div class="p-4">
+    <div class="row">
+                             
+        <div class="col-xl-12  stretch-card">
+          
+            <div class="card border-0  pb-0 bgTable">
+               
+              <div class="card-body p-2">
+                 
+                <div class="table-responsive">
+                    <table class="table table-striped text-center mb-0 table-light" datatable [dtOptions]="dtOptions" >
+                      <thead>
+                        <tr>
+                            <th width="100">ID </th>
+                            <th>Playlist Name</th>
+                            <th>Height</th>
+                            <th>Width</th>
+                            <th>Uploaded By</th>
+                            <th>Audited By</th>
+                            <th width="100">Status</th>
+                            <th width="100">Active</th>
+                            <th width="100">Action</th>
+                           
+                        </tr>
+                    </thead>
+                      <tbody>
+                        <tr>
+                          <td>39	</td>
+                         <td>Playlist 1 _6 to 10</td> 	<td>160</td>	<td>288</td> 		
+                            <td>admin</td>
+                            <td>admin </td>
+                            <td><label class="badge badge-success p-2 rounded-pill ps-4 pe-4">Approved</label></td>
+                            <td><label class="switch active float-left" >
+                              <input type="checkbox" name="status"  [(ngModel)]="active">
+                              <div class="slider round"></div>
+                              </label></td>
+                            <td> <div class="btn-group btn-sm" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-inverse-primary btn-sm"><i class="icon-eye"></i></button>
+                                <button type="button" class="btn btn-inverse-primary btn-sm"><i class="icon-trash"></i></button>
+                                <button type="button" class="btn btn-inverse-primary btn-sm"><i class="fa fa-copy"></i></button>
+                               
+                              </div>
+                                </td>
+                           
+                        </tr>
+                        <tr>
+                          <td>26	</td>
+                         <td>8 minutes playlist	</td> 	<td>160</td>	<td>288</td> 		
+                            <td>admin</td>
+                            <td>admin </td>
+                            <td><label class="badge badge-success p-2 rounded-pill ps-4 pe-4">Approved</label></td>
+                            <td><label class="switch active float-left" >
+                              <input type="checkbox" name="status"  [(ngModel)]="active1">
+                              <div class="slider round"></div>
+                              </label></td>
+                            <td> <div class="btn-group btn-sm" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-inverse-primary btn-sm"><i class="icon-eye"></i></button>
+                                <button type="button" class="btn btn-inverse-primary btn-sm"><i class="icon-trash"></i></button>
+                                <button type="button" class="btn btn-inverse-primary btn-sm"><i class="fa fa-copy"></i></button>
+                               
+                              </div>
+                                </td>
+                           
+                        </tr>
+                        
+                      
+                        </tbody>
+                        </table>
+                        </div>
+                      
+                 
+                </div>
+               
+              </div>
+            </div>
+    
+          
+    </div>
+    
+    </div>

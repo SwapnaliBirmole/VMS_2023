@@ -1,0 +1,175 @@
+        
+        <div class="modal-header bgTable"  style="border-radius: 15px 15px 0 0!important;">
+          <h5 class="modal-title text-uppercase mr-5">Emergency Publish</h5> 
+          
+          <div class="form-group mb-0 text-light mt-1 w-50">
+            <form [formGroup]="myForm" class="row" >
+             
+            <div class="col-md-6">
+                <ng-multiselect-dropdown
+                name="zones"
+                [placeholder]="'Select Zone'"
+                [settings]="dropdownSettings"
+                [data]="zones"
+                formControlName="zones"
+                [disabled]="disabled"
+                (onSelect)="onItemSelect($event)" class="pl-0 form-control-sm w-100 bg-transparent text-light border-light p-0">
+            </ng-multiselect-dropdown>
+          </div>
+          <div class="col-md-6 pl-0 pr-0">
+            <ng-multiselect-dropdown
+                name="vms"
+                [placeholder]="'Select VMS'"
+                [settings]="dropdownSettings"
+                [data]="vms"
+                formControlName="vms"
+                [disabled]="disabled"
+                (onSelect)="onItemSelect($event)" class="form-control-sm w-100 bg-transparent text-light border-light p-0">
+            </ng-multiselect-dropdown>
+        </div>
+     
+      </form> </div>
+          
+          <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body p-0">
+                        
+          <ul class="nav nav-pills mb-0" id="pills-tab" role="tablist" ngbNav #nav="ngbNav" [(activeId)]="active" >
+            <li class="nav-item w-50" [ngbNavItem]="1">
+              <a class="nav-link text-center " data-toggle="pill" href="#publish-text" role="tab" aria-controls="publish-text" aria-selected="true" ngbNavLink> <i class="icon-paper"></i> Text Publish</a>
+              <ng-template ngbNavContent>
+                <div class="form-group row">
+                  <div class="col">
+                    <label> Text Content</label>
+                    <div class="form-group">
+                     
+                      <textarea name="" id="" rows="3" class="form-control"></textarea>
+                    </div>
+                   
+                  </div>
+                  <div class="col">
+                   
+                    <!-- <div class="form-group col-md-6">
+                <label >Preview <button type="button" class="btn btn-outline-secondary btn-rounded btn-icon btn-sm"><i class="icon-play text-primary"></i></button></label>
+                    </div>
+                    <div class="form-group col-md-10">
+                    <div class="embed-responsive embed-responsive-16by9">
+                      <iframe class="embed-responsive-item" src="https://www.youtube.com/" allowfullscreen></iframe>
+                    </div>
+                  </div> -->
+
+                  <div class="row mb-3">
+                    <div class="col-md-7">
+                      <label> Select Unit </label>
+                      <select class="form-control-sm w-100"  style="border: 1px solid rgb(222 226 230);">
+                            <option>Seconds</option>
+                          <option>Minutes</option>
+                          <option>Hours</option>
+                          
+                        </select>
+                  </div>
+                  <div class="col-md-5">
+                    <label> &nbsp; </label>
+                    <input type="number" class="form-control form-control-sm" placeholder="Numeric Value Only">
+
+                    </div>
+                  </div>
+                    <div class="row">
+                    <div class="col-md-7">
+                      <label> Play Until </label>
+                      <div class="input-group">
+                        <input
+                           
+                            class="form-control"
+                            placeholder="dd/mm/yyyy"
+                            name="d2"
+                            #c2="ngModel"
+                            [(ngModel)]="model2"
+                            ngbDatepicker
+                            #d2="ngbDatepicker"
+                        />
+                        <button class="btn btn-outline-primary" (click)="d2.toggle()" type="button"><i class="fa fa-calendar"></i></button>
+                </div>
+
+
+                </div>
+                <div class="col-md-5">
+                  <label> Set time <small class="text-secondary"><i>24 hrs format</i></small></label>
+                  <ngb-timepicker [(ngModel)]="time" [seconds]="seconds"></ngb-timepicker>
+                 </div>
+                 </div>
+                  </div>
+                
+                </div>
+                </ng-template>
+            </li>
+            <li class="nav-item w-50" [ngbNavItem]="2">
+              <a class="nav-link text-center  " id="publish-image-tab" data-toggle="pill" href="#publish-image" role="tab" aria-controls="publish-image" aria-selected="false" ngbNavLink> <i class="icon-image"></i> Image Publish</a>
+              <ng-template ngbNavContent>
+                <div class="form-group row">
+                  <div class="col">
+                    <label> Image Upload</label>
+                    <div class="form-group">
+                      <!-- <input type="file" name="img[]" class="file-upload-default">
+                      <div class="input-group col-xs-12">
+                        <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                        <span class="input-group-append">
+                          <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+                        </span>
+                      </div> -->
+                      <input type="file" name="profile"  enctype="multipart/form-data" accept=".jpg,application/jpg" class="form-control"  (change)="onSelectFile($event)"/>
+                    </div>
+                    <div class="row">
+                    <div class="col-md-7">
+                      <label> Play Until </label>
+                      <div class="input-group">
+                        <input
+                           
+                            class="form-control"
+                            placeholder="dd/mm/yyyy"
+                            name="d3"
+                            #d3="ngModel"
+                            [(ngModel)]="model3"
+                            ngbDatepicker
+                            #d4="ngbDatepicker"
+                        />
+                        <button class="btn btn-outline-primary" (click)="d4.toggle()" type="button"><i class="fa fa-calendar"></i></button>
+                </div>
+  
+                  </div>
+                  <div class="col-md-5">
+                  <label> Set time <small class="text-secondary"><i>24 hrs format</i></small></label>
+                  <ngb-timepicker [(ngModel)]="time2" [seconds]="seconds"></ngb-timepicker>
+                 </div>
+                </div>
+                  </div>
+                  <div class="col">
+                   
+                    <div class="form-group col-md-6">
+                <label >Preview <button type="button" class="btn btn-outline-secondary btn-rounded btn-icon btn-sm"><i class="icon-play text-primary"></i></button></label>
+                    </div>
+                    <div class="form-group col-md-10">
+                      <img [src]="url" height="200">
+                  </div>
+                  </div>
+                
+                
+  
+              </div>
+          </ng-template>
+            </li>
+           
+          </ul>
+          <div class="tab-content" id="pills-tabContent" style="border-top: 1px solid #ccc;">
+            <div class="tab-pane fade show active p-2" id="publish-text" role="tabpanel" aria-labelledby="publish-text-tab">
+          <div [ngbNavOutlet]="nav" class="mt-2"></div>
+          </div>
+          </div>
+          </div>
+          <div class="modal-footer bg-light">
+           
+            <button type="button" class="btn btn-primary" (click)="passBack()">Publish</button>
+          </div>
+         

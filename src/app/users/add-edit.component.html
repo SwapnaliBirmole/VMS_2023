@@ -1,0 +1,65 @@
+<!-- <h1>{{title}}</h1> -->
+
+<div class="modal-header bgTable"  style="border-radius: 15px 15px 0 0!important;">
+    <h5 class="modal-title text-uppercase mr-5">{{title}}</h5> 
+    <!-- <h5 class="modal-title text-uppercase mr-5">{{ this.id != null ? 'Edit User':'Add New User'}} </h5>  -->
+    <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+</div>
+        <!-- <div class="card border-0  pb-0 bgTable">
+           <div class="card-header text-white">{{title}}</div> -->
+          
+<form *ngIf="!loading" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="modal-body">
+    <div class="row">
+        <div class="mb-3 col">
+            <label class="form-label">First Name</label>
+            <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['firstName'].errors }" [(ngModel)]="user.firstName" />
+            <div *ngIf="submitted && f['firstName'].errors" class="invalid-feedback">
+                <div *ngIf="f['firstName'].errors?.['required']">First Name is required</div>
+            </div>
+        </div>
+        <div class="mb-3 col">
+            <label class="form-label">Last Name</label>
+            <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['lastName'].errors }" [(ngModel)]="user.lastName" />
+            <div *ngIf="submitted && f['lastName'].errors" class="invalid-feedback">
+                <div *ngIf="f['lastName'].errors?.['required']">Last Name is required</div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="mb-3 col">
+            <label class="form-label">Username</label>
+            <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['username'].errors }" [(ngModel)]="user.username"/>
+            <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
+                <div *ngIf="f['username'].errors?.['required']">Username is required</div>
+            </div>
+        </div>
+        <div class="mb-3 col">
+            <label class="form-label">
+                Password
+                <em *ngIf="id">(Leave blank to keep the same password)</em>
+            </label>
+            <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"  [(ngModel)]="user.password"/>
+            <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                <div *ngIf="f['password'].errors?.['required']">Password is required</div>
+                <div *ngIf="f['password'].errors?.['minlength']">Password must be at least 6 characters</div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="modal-footer bg-light">
+        <button [disabled]="submitting" class="btn btn-primary">
+            <span *ngIf="submitting" class="spinner-border spinner-border-sm me-1"></span>
+            Save
+        </button>
+        <a routerLink="/users" class="btn btn-link" (click)="passBack()">Cancel</a>
+    </div>
+    
+</form>
+<div *ngIf="loading" class="text-center m-5">
+    <span class="spinner-border spinner-border-lg align-center"></span>
+</div>
+
+<!-- </div> -->

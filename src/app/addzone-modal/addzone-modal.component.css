@@ -1,0 +1,52 @@
+#map {
+    width: 100%;
+    height: 75vh;
+ }
+ 
+
+::ng-deep .form-control:focus, ::ng-deep .form-control {  background: transparent; border: 1px solid #cccccc70;}
+::ng-deep .btn-info {
+    color: #fff;
+    background-color: #3794fc;
+    border-color: #3794fc;
+}
+::ng-deep .btn-info:hover {
+    color: #fff;
+    background-color: #1180fb;
+    border-color: #0579fb;
+}
+::ng-deep .btn-secondary {
+    color: #212529;
+    background-color: #e4e6f6;
+    border-color: #e4e6f6;
+}
+::ng-deep #addZoneForm .btn {
+    cursor: pointer;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    font-size: 15px;
+    padding: 5px 20px;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 112px;
+    height: 30px;
+    margin-top: 4px;
+    margin-bottom: 0;
+}
+::ng-deep .btn.btn-primary {
+    color: #fff;
+    background-color: #ec37fc;
+    border-color: #ec37fc;
+}
+
+::ng-deep .btn-primary:hover {
+    color: #fff;
+    background-color: #e811fb;
+    border-color: #e705fb;
+}
+
+#addZoneForm .form-control{color: white !important;}
+.form-control.is-invalid{border-color:#e9868d;}
+.invalid-feedback{color:#e9868d;}

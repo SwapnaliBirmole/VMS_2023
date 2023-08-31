@@ -1,0 +1,32 @@
+::ng-deep .modal-content  {
+    border-radius: 15px!important;
+  }
+  ::ng-deep .modal .btn-primary {
+    color: #fff;
+    background-color: #ec37fc;
+    border-color: #ec37fc;
+}
+::ng-deep .modal .btn-outline-primary {
+    color: #ec37fc;
+    background-color: #fff;
+    border-color: #ec37fc;
+}
+::ng-deep .modal .btn-primary:hover, ::ng-deep .btn-outline-primary:hover {
+    color: #fff;
+    background-color: #bf21ce;
+    border-color: #ec37fc;
+}
+::ng-deep  .form-select{background: #9518a0!important;border: 0!important;
+    color: white!important;
+    margin: 2px!important;}
+
+    ::ng-deep .btn-link {color:white;}
+    ::ng-deep .ngb-dp-weekday, ::ng-deep .ngb-dp-weekdays  {color: white !important;;background: #b71ec5!important;}
+::ng-deep .ngb-dp-header{background: #b71ec5!important;}
+::ng-deep .nav-pills .nav-link.active, ::ng-deep .nav-pills .show>.nav-link {
+    color: var(--bs-nav-pills-link-active-color);
+    background-color: #4801ff;
+}
+::ng-deep .input-group .form-control{color: #ccc,!important;}
+::ng-deep .ngb-dp-day .bg-primary{background: #b71ec5!important;}
+.nav-pills .nav-link{line-height: 28px;}

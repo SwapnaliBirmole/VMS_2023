@@ -1,0 +1,8 @@
+a.badge {text-decoration: none!important;}
+.bgTable{color:#fff;}
+#vmsTable_length{width: 50%!important; float: left !important;}
+#vmsTable_filter{width: 50%!important; float: right !important;}
+.w-100{width: 100% !important;}
+.dataTables_wrapper.form-inline{display: block!important;}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {padding: 0.1rem 0.5rem 0.2rem!important;}

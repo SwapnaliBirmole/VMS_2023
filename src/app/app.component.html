@@ -1,0 +1,25 @@
+<div class="container-scroller">
+  <alert></alert>
+  <app-header  [title]="title"  *ngIf="user"></app-header>
+  <div class="container-fluid page-body-wrapper p-0">
+    <app-sidebar  *ngIf="user"></app-sidebar>
+    <div class="main-panel gradient-custom-2 aniamteBg" style="position: relative;">
+      <div class="grid" *ngIf="!user"></div>
+      <div class="bgGrid" style="width:100%; display:block;position:absolute; z-index: 4; height:100%; top:1"></div>
+      <div class="content-wrapper p-0" style="position: relative;z-index: 4; background: transparent;">
+        <router-outlet (activate)="setHeader()"></router-outlet>
+
+     
+
+    </div>
+    <app-footer  *ngIf="user"></app-footer>
+</div>
+</div>
+</div>
+
+
+<!-- main app container -->
+<!-- <div class="app-container">
+  <alert></alert>
+  <router-outlet></router-outlet>
+</div> -->

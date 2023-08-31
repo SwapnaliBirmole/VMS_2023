@@ -1,0 +1,148 @@
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()" [ngStyle]="{'display' : showMap ? 'initial' : 'none'}">
+    <div class="modal-header bgTable"  style="border-radius: 15px 15px 0 0!important;">
+      <h5 class="modal-title">Add New VMS</h5>
+      <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+        <div class="modal-body">
+     
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            
+            <input type="text" formControlName="vmsid" class="form-control form-control-sm" placeholder="VMS ID" [ngClass]="{ 'is-invalid': submitted && f['vmsid'].errors }" />
+           
+            <div *ngIf="submitted && f['vmsid'].errors" class="invalid-feedback">
+              <div *ngIf="f['vmsid'].errors['required']">VMS Id is required</div>
+            </div>
+           
+          </div>
+          <div class="form-group col-md-4">
+            
+            <input type="number" class="form-control form-control-sm" placeholder="Serial No." formControlName="serialno" [ngClass]="{ 'is-invalid': submitted && f['serialno'].errors }"/>
+            <div *ngIf="submitted && f['serialno'].errors" class="invalid-feedback">
+              <div *ngIf="f['serialno'].errors['required']">Serial No is required</div>
+            </div>
+          </div>
+       
+        <div class="form-group col-md-4">
+         
+          <input type="text" class="form-control form-control-sm"  placeholder="Description" formControlName="description" [ngClass]="{ 'is-invalid': submitted && f['description'].errors }"/>
+          <div *ngIf="submitted && f['description'].errors" class="invalid-feedback">
+            <div *ngIf="f['description'].errors['required']">Description is required</div>
+          </div>
+        </div>
+        <div class="form-group col-md-4">
+          
+          <select  class="form-control form-control-sm" (change)="changeZone($event)" formControlName="zonename"
+          [ngClass]="{'is-invalid': submitted && f['zonename'].errors}">
+            <option  value="">Select Zone</option>
+            <option *ngFor="let zone of Zone" [ngValue]="zone.id">{{zone.name}}</option>
+          </select> 
+          <div *ngIf="submitted && f['zonename'].errors" class="invalid-feedback">
+            <div *ngIf="f['zonename'].errors['required']">Zone Name is required</div>
+          </div>
+        </div>
+      
+        <div class="form-group col-md-4">
+         
+          <input type="date" class="form-control form-control-sm"  placeholder="Installation Date" id='installationDate' formControlName="installationdate" [ngClass]="{'is-invalid': submitted && f['installationdate'].errors}" />
+          <div *ngIf="submitted && f['installationdate'].errors" class="invalid-feedback">
+            <div *ngIf="f['installationdate'].errors['required']">Installation Date is required</div>
+          </div>
+        </div>
+        <div class="form-group col-md-4">
+          <input type="ipaddress"
+        class="form-control form-control-sm"
+        formControlName="ipaddress" placeholder="Ip Address"  [ngClass]="{'is-invalid': submitted && f['ipaddress'].errors}"/>
+        <div *ngIf="submitted && f['ipaddress'].errors" class="invalid-feedback">
+          <div *ngIf="f['ipaddress'].errors['required']">Ip Address is required</div>
+        </div>
+        </div>
+        <div class="form-group col-md-4">
+         
+                  <input type="text" class="form-control form-control-sm" placeholder="Latitude" formControlName="latitude" [ngClass]="{ 'is-invalid': submitted && f['latitude'].errors }"/>
+          <div *ngIf="submitted && f['latitude'].errors" class="invalid-feedback">
+            <div *ngIf="f['latitude'].errors['required']">Latitude is required</div>
+          </div>
+        </div>
+        <div class="form-group col-md-4">
+         
+         
+          <input type="text" class="form-control form-control-sm" placeholder="Longitude" formControlName="longitude" [ngClass]="{ 'is-invalid': submitted && f['longitude'].errors }"/>
+          <div *ngIf="submitted && f['longitude'].errors" class="invalid-feedback">
+            <div *ngIf="f['longitude'].errors['required']">Longitude is required</div>
+          </div>
+        </div>
+        <div class="form-group col-md-4 pt-2 text-primary text-center">
+         <a class="btn btn-outline-primary btn-icon-text" (click)="showMapView()"><i class="fa fa-map-marker"></i> Check on Map </a>
+          
+        </div>
+        <div class="form-group col-md-4">
+                   
+          <input type="number" class="form-control form-control-sm" placeholder="Width" formControlName="width" [ngClass]="{ 'is-invalid': submitted && f['width'].errors }"/>
+          <div *ngIf="submitted && f['width'].errors" class="invalid-feedback">
+            <div *ngIf="f['width'].errors['required']">Width is required</div>
+          </div>
+        </div>
+        <div class="form-group col-md-4">
+         
+          <input type="number" class="form-control form-control-sm" placeholder="Height" formControlName="height" [ngClass]="{ 'is-invalid': submitted && f['height'].errors }"/>
+          <div *ngIf="submitted && f['height'].errors" class="invalid-feedback">
+            <div *ngIf="f['height'].errors['required']">Height is required</div>
+          </div>
+        </div>
+        <div class="form-group col-md-4 text-center">
+         
+            <label class="switch active">
+            <input type="checkbox" [(ngModel)]="active">
+            <div class="slider round"></div>
+            </label>
+        </div>
+
+        
+        <div class="form-group col-md-12">
+          <hr>
+                       
+        </div>
+        <div class="form-group col-md-2 border-right"><h6 class="text-center">Configuration :- </h6></div>
+        <div class="form-group col-md-6">
+         <div class="range-slider">
+            <div id="tooltip"></div>
+            <input id="range" type="range" step="2" value="0" min="1" max="254">
+        </div>
+        <label class="text-center w-100"> Brightness <span class="text-dark">{{brightness}}</span> </label>
+       
+        </div>
+
+
+      
+        <div class="form-group col-md-4 text-center">
+         
+          
+          <label class="switch onOff">
+            <input type="checkbox"  [(ngModel)]="vmsOn">
+            <div class="slider round"></div>
+            </label>
+        </div>
+
+      </div>
+      
+       
+      
+    </div>
+    <div class="modal-footer bg-light">
+      <!-- <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button> -->
+      <button type="reset" class="btn btn-secondary"  (click)="onReset()">Reset</button>
+      <!-- <input class="btn btn-primary" type="reset" value="Reset"> -->
+      <button type="submit" class="btn btn-primary" >Submit</button>
+    </div>
+  </form>
+  <div [ngStyle]="{'display' : !showMap ? 'initial' : 'none'}">
+  <div class="modal-body p-0" >
+  <div id="map" class="map" style="border-radius: 10px!important; height: 450px!important; "></div>
+  </div>
+  <div class="modal-footer bg-light p-2">
+    <button type="button" class="btn btn-primary" (click)="showForm()"> OK </button>
+    </div></div>
