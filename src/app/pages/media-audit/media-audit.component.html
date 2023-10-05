@@ -1,0 +1,131 @@
+<div class="p-4">
+<div class="row">
+                         
+    <div class="col-xl-12  grid-margin" id="listView">
+  <div class="card  border-0">
+    <div class="card-body p-2 bgTable" style="border-radius: 0 0;">
+                     <div class="table-responsive">
+          <table class="table table-striped text-center mb-0 table-light" id="mediaAuditList"  datatable [dtOptions]="dtOptions" id="mediaAuditList">
+            <thead>
+              <tr>
+                  <th width="50">Sr No </th>
+                  <th width="100">Upload Set ID</th>
+                  <th width="100">Upload By </th>
+                  <th width="150">Date of Upload </th>
+                  <th width="100">Files </th>
+                  <th width="150">File Counts</th>
+                  <th width="100">Approval  </th>
+                  <th width="100">Audited By</th>
+                  <th width="100">Actions</th>
+                 
+              </tr>
+          </thead>
+            <tbody>
+              <tr>
+                  <td> 1 </td>
+                  <td>172023115029 </td>
+                  <td>admin	 </td>
+                  <td>2023-08-14 11:50:41	 </td>
+                  <td>AD-CRNV-VMC-1-16-3-2020.png <span class="text-danger">...+4</span>	 </td>
+                  <td>	5 </td>
+                  <td><label class="badge badge-primary p-2 rounded-pill">Pending</label>	 </td>
+                  <td>-</td>
+                  <td><div class="btn-group" role="group">
+                    <button type="button" class="btn btn-inverse-primary btn-sm" (click)="openModal()"><i class="icon-eye"></i></button></div></td>
+                 
+              </tr>
+              <tr>
+                  <td> 2 </td>
+                  <td>272023112721 </td>
+                  <td>admin	 </td>
+                  <td>2023-08-22 11:29:44		 </td>
+                  <td>NTPC.png	</td>
+                  <td>	5 </td>
+                  <td><label class="badge badge-primary p-2 rounded-pill">Pending</label>	 </td>
+                  <td>-</td>
+                  <td><div class="btn-group" role="group">
+                    <button type="button" class="btn btn-inverse-primary btn-sm " (click)="openModal()"><i class="icon-eye"></i></button></div></td>
+                 
+              </tr>
+              <tr>
+                  <td> 3 </td>
+                  <td>472023153729 </td>
+                  <td>admin	 </td>
+                  <td>2023-08-10 15:38:05			 </td>
+                  <td>1.png<span class="text-danger">...+12	</span></td>
+                  <td>	13 </td>
+                  <td><label class="badge badge-success p-2 rounded-pill">Approved</label>	 </td>
+                  <td>admin</td>
+                  <td><div class="btn-group" role="group">
+                    <button type="button" class="btn btn-inverse-primary btn-sm" (click)="openModal()"><i class="icon-eye"></i></button>
+                    <button type="button" class="btn btn-inverse-primary btn-sm"><i class="icon-trash"></i></button></div></td>
+                 
+              </tr>
+              <tr>
+                  <td> 4 </td>
+                  <td>172023101232 </td>
+                  <td>admin	 </td>
+                  <td>2023-08-14 10:13:28			 </td>
+                  <td>AD-CRNV-VMC-1-16-3-2020.png<span class="text-danger">...+4	</span></td>
+                  <td>	5 </td>
+                  <td><label class="badge badge-success p-2 rounded-pill">Approved</label>	 </td>
+                  <td>admin</td>
+                  <td><div class="btn-group" role="group">
+                    <button type="button" class="btn btn-inverse-primary btn-sm" (click)="openModal()"><i class="icon-eye"></i></button>
+                    <button type="button" class="btn btn-inverse-primary btn-sm"><i class="icon-trash"></i></button></div></td>
+                 
+              </tr>
+              <tr>
+                  <td> 5 </td>
+                  <td>47202315413 </td>
+                  <td>admin	 </td>
+                  <td>2023-08-10 15:41:31				 </td>
+                  <td>Video-10.mp4<span class="text-danger">...+1</span></td>
+                  <td>	2 </td>
+                  <td><label class="badge badge-success p-2 rounded-pill">Approved</label>	 </td>
+                  <td>admin</td>
+                  <td><div class="btn-group" role="group">
+                    <button type="button" class="btn btn-inverse-primary btn-sm" (click)="openModal()"><i class="icon-eye"></i></button>
+                    <button type="button" class="btn btn-inverse-primary btn-sm"><i class="icon-trash"></i></button></div></td>
+                 
+              </tr>
+              <tr>
+                  <td> 6 </td>
+                  <td>572023163517 </td>
+                  <td>admin	 </td>
+                  <td>2023-08-11 16:35:24					 </td>
+                  <td>1.png	</td>
+                  <td>	1 </td>
+                  <td><label class="badge badge-danger p-2 rounded-pill">Rejected</label>	 </td>
+                  <td>admin</td>
+                  <td><div class="btn-group" role="group">
+                    <button type="button" class="btn btn-inverse-primary btn-sm" (click)="openModal()"><i class="icon-eye"></i></button></div></td>
+                 
+              </tr>
+              <tr>
+                  <td> 7 </td>
+                  <td>172023115041	 </td>
+                  <td>admin	 </td>
+                  <td>2023-08-14 11:51:07	 </td>
+                  <td>AD-PARUL-11-7-2020_1.mp4	</td>
+                  <td>	1 </td>
+                  <td><label class="badge badge-danger p-2 rounded-pill">Rejected</label>	 </td>
+                  <td>admin</td>
+                  <td><div class="btn-group" role="group">
+                    <button type="button" class="btn btn-inverse-primary btn-sm" (click)="openModal()"><i class="icon-eye"></i></button></div></td>
+                 
+              </tr>
+              
+             
+            
+              </tbody>
+              </table>
+              </div>
+            
+       
+      </div>
+  </div>
+  </div>
+            
+          </div>
+        </div>

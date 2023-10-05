@@ -1,0 +1,77 @@
+::ng-deep .modal-content  {
+    border-radius: 15px!important;
+  }
+  ::ng-deep .modal .btn-primary {
+    color: #fff;
+    background-color: #ec37fc;
+    border-color: #ec37fc;
+}
+::ng-deep .modal .btn-outline-primary {
+    color: #ec37fc;
+    background-color: #fff;
+    border-color: #ec37fc;
+}
+::ng-deep .modal .btn-primary:hover, ::ng-deep .btn-outline-primary:hover {
+    color: #fff;
+    background-color: #bf21ce;
+    border-color: #ec37fc;
+}
+
+.error:focus,
+.error {
+  border-color: #E91E63;
+  color: #E91E63;
+}
+
+.invalid-feedback {
+  color: #E91E63;
+}
+
+.btn-inverse-primary {
+    background-color: rgba(236, 55, 252, 0.2);
+    background-image: none;
+    border-color: rgba(236, 55, 252, 0);
+}
+.btn-inverse-primary:hover {
+    color: #ffffff;
+    background-color: #ec37fc;
+    border-color: #ec37fc;
+}
+.btn i {
+    font-size: 1.2rem;
+}
+.btn-inverse-info {
+    background-color: rgba(55, 148, 252, 0.2);
+    background-image: none;
+    border-color: rgba(55, 148, 252, 0);
+}
+.btn-inverse-info:hover {
+    color: #ffffff;
+    background-color: #3794fc;
+    border-color: #3794fc;
+}
+.btn-inverse-danger {
+    background-color: rgba(252, 56, 29, 0.2);
+    background-image: none;
+    border-color: rgba(252, 56, 29, 0);
+}
+.btn-inverse-danger:hover {
+    color: #ffffff;
+    background-color: #fc381d;
+    border-color: #fc381d;
+}
+.btn.btn-icon.btn-sm {
+    width: 35px;
+    height: 35px;
+    padding: 0;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #ec37fc;
+    border-color: #ec37fc;
+}
+.btn-primary:hover, .btn-outline-primary:hover {
+    color: #fff;
+    background-color: #bf21ce;
+    border-color: #ec37fc;
+}

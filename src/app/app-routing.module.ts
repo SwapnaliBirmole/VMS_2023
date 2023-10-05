@@ -9,6 +9,9 @@ import { ListviewComponent } from './pages/listview/listview.component';
 import { MediaClearanceComponent } from './pages/media-clearance/media-clearance.component';
 import { MediaUploadComponent } from './pages/media-upload/media-upload.component';
 import { PlaylistComponent } from './pages/playlist/playlist.component';
+import { MediaAuditComponent } from './pages/media-audit/media-audit.component';
+import { PublishOperationComponent } from './pages/publish-operation/publish-operation.component';
+import { MediaStatusComponent } from './pages/media-status/media-status.component';
 
 const accountModule = () => import('./account/account.module').then(x => x.AccountModule);
 const usersModule = () => import('./users/users.module').then(x => x.UsersModule);
@@ -24,9 +27,12 @@ const routes: Routes = [
   { path: 'vms-management', component:VmsmanagementComponent,data:{title :'VMS Management'},canActivate: [AuthGuard] },
   { path: 'zone-management', component:ZonemanagementComponent,data:{title :'Zone Management'},canActivate: [AuthGuard] },
   { path: 'listview', component: ListviewComponent},
-  { path: 'media-clearence', component: MediaClearanceComponent},
+  { path: 'media-clearance', component: MediaClearanceComponent},
   { path: 'media-upload', component: MediaUploadComponent},
   { path: 'playlist-creation', component: PlaylistComponent},
+  { path: 'media-audit', component: MediaAuditComponent},
+  { path: 'publish-operation', component: PublishOperationComponent},
+  { path: 'media-status', component: MediaStatusComponent},
   { path: '**', redirectTo: '' }
 ];
 

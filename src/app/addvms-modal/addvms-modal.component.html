@@ -12,7 +12,7 @@
           <div class="form-group col-md-4">
             
             <input type="text" formControlName="vmsid" class="form-control form-control-sm" placeholder="VMS ID" [ngClass]="{ 'is-invalid': submitted && f['vmsid'].errors }" />
-           
+
             <div *ngIf="submitted && f['vmsid'].errors" class="invalid-feedback">
               <div *ngIf="f['vmsid'].errors['required']">VMS Id is required</div>
             </div>

@@ -1,0 +1,55 @@
+<div>
+<div class="modal-header bgTable"  style="border-radius: 15px 15px 0 0!important;">
+    <h5 class="modal-title">Media Details</h5>
+    <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+      <div class="modal-body">
+        <div class="table-responsive">
+            <table class="table text-center mb-0 table-light table-striped">
+                <thead class="table-dark">
+   <tr><th> Media Name	</th> <th>Media Type	</th> <th>Action</th></tr>
+</thead>
+<tbody>
+    <tr><td>AD-CRNV-VMC-1-16-3-2020.png	</td><td>Image</td><td><button class="btn btn-inverse-primary btn-rounded btn-icon btn-sm"  (click)="onClick(imageList[0])"> <i class="icon-eye"></i></button><button class="btn btn-inverse-danger btn-rounded btn-icon btn-sm"> <i class="icon-trash"></i></button></td></tr>
+    <tr><td>AD-CRNV-VMC-2-16-3-2020.png	</td><td>Image</td><td><button class="btn btn-inverse-primary btn-rounded btn-icon btn-sm"  (click)="onClick(imageList[1])"> <i class="icon-eye"></i></button><button class="btn btn-inverse-danger btn-rounded btn-icon btn-sm"> <i class="icon-trash"></i></button></td></tr>
+    <tr><td>AD-CRNV-VMC-3-16-3-2020.png	</td><td>Image</td><td><button class="btn btn-inverse-primary btn-rounded btn-icon btn-sm"  (click)="onClick(imageList[2])"> <i class="icon-eye"></i></button><button class="btn btn-inverse-danger btn-rounded btn-icon btn-sm"> <i class="icon-trash"></i></button></td></tr>
+    <tr><td>AD-CRNV-VMC-5-16-3-2020.png	</td><td>Image</td><td><button class="btn btn-inverse-primary btn-rounded btn-icon btn-sm"  (click)="onClick(imageList[0])"> <i class="icon-eye"></i></button><button class="btn btn-inverse-danger btn-rounded btn-icon btn-sm"> <i class="icon-trash"></i></button></td></tr>
+    <tr><td>AD-CRNV-VMC-6-16-3-2020.png	</td><td>Image</td><td><button class="btn btn-inverse-primary btn-rounded btn-icon btn-sm"  (click)="onClick(imageList[1])"> <i class="icon-eye"></i></button><button class="btn btn-inverse-danger btn-rounded btn-icon btn-sm"> <i class="icon-trash"></i></button></td></tr>
+</tbody>
+</table>
+</div>
+<!-- <div class="formGroup mt-2">
+<div class="row">
+    <div class="col-6">
+        <label for="">Remarks <span class="text-danger">*</span></label>
+        <input type="text" class="form-control"/>
+    </div>
+</div>
+</div> -->
+<!-- <div class="pt-2 bg-light text-right mt-2" style="border-top: 1px solid #ccc;"><button type="button" class="btn btn-secondary btn-sm mr-3">Reset </button><button type="button" class="btn btn-primary btn-sm">Save </button></div> -->
+<div class="text-center">
+    <img src="{{ imageSrc }}"  class="m-2"/>
+</div>
+        </div>
+        <div class="modal-footer bg-light">
+            <div class="formGroup w-100 mt-2">
+                <div class="row">
+                    <div class="col-md-8">
+                       
+                        <input type="text" class="form-control" placeholder="Remarks"/>
+                    </div>
+                    <div class="col-md-4 text-right">
+                        <button type="reset" class="btn btn-success mr-2 btn-sm"><i class="icon-circle-check"></i> Approve</button>
+            
+            <button type="submit" class="btn btn-danger btn-sm"><i class="icon-circle-cross"></i> Reject</button>
+                        </div>
+                </div>
+                </div>
+            <!-- <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button> -->
+            <!-- <button type="reset" class="btn btn-success">Approve</button> -->
+            <!-- <input class="btn btn-primary" type="reset" value="Reset"> -->
+            <!-- <button type="submit" class="btn btn-danger" >Reject</button> -->
+          </div>
+          </div>

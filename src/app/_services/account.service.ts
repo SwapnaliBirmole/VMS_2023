@@ -3,8 +3,6 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
-
 import { User } from '../_models';
 import { environment } from 'src/environments/environment';
 
@@ -12,7 +10,6 @@ import { environment } from 'src/environments/environment';
 export class AccountService {
     private userSubject: BehaviorSubject<User | null>;
     public user: Observable<User | null>;
-
     constructor(
         private router: Router,
         private http: HttpClient
@@ -62,7 +59,6 @@ export class AccountService {
                     // update local storage
                     const user = { ...this.userValue, ...params };
                     localStorage.setItem('user', JSON.stringify(user));
-
                     // publish updated user to subscribers
                     this.userSubject.next(user);
                 }

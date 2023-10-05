@@ -1,0 +1,114 @@
+<div class="p-4">
+    <div class="row mb-3" >
+                             
+        <div class="col-xl-12  grid-margin stretch-card">
+         
+            <div class="card pb-0 border-0">
+<form (ngSubmit)="onSubmit()">
+            <div id="stepper1" class="bs-stepper">
+                <div class="bs-stepper-header bg-light">
+                  <div class="step" data-target="#test-l-1">
+                    <div class="step-trigger bg-light">
+                      <span class="bs-stepper-circle">1</span>
+                      <span class="bs-stepper-label">Zone and VMS Selection</span>
+                    </div>
+                  </div>
+                  <!-- <div class="line"></div> -->
+                  <div class="step" data-target="#test-l-2">
+                    <div class="step-trigger bg-light">
+                      <span class="bs-stepper-circle">2</span>
+                      <span class="bs-stepper-label">Playlist Selection</span>
+                    </div>
+                  </div>
+                  <!-- <div class="line"></div> -->
+                  <div class="step active" data-target="#test-l-3">
+                    <div class="step-trigger bg-light">
+                      <span class="bs-stepper-circle">3</span>
+                      <span class="bs-stepper-label">Time Management</span>
+                    </div>
+                  </div>
+                  
+                </div>
+                <div class="bs-stepper-content pt-2" style="border-top: 1px solid #ccc;">
+                    <div id="test-l-1" class="content">
+                        <div class="form-group row">
+                          <div class="col-md-4">
+                            <label for="">Select Zone</label>
+                          <ng-multiselect-dropdown
+                          name="zones"
+                          [placeholder]="'Select'"
+                          [settings]="dropdownSettings"
+                          [data]="zones"
+                          formControlName="zones"
+                          [disabled]="disabled"
+                          (onSelect)="onItemSelect($event)" class="pl-0 form-control-sm w-100 ">
+                      </ng-multiselect-dropdown>
+                      </div>
+                          <div class="col-md-4">
+                         <label for="">Select VMS</label>
+                          <ng-multiselect-dropdown
+                          name="vms"
+                          [placeholder]="'Select'"
+                          [settings]="dropdownSettings"
+                          [data]="vms"
+                          formControlName="vms"
+                          [disabled]="disabled"
+                          (onSelect)="onItemSelect($event)" class="form-control-sm w-100 p-0">
+                      </ng-multiselect-dropdown>
+                      </div>
+                         
+                        </div>
+                        <hr class="dashed"/>
+                        <div class="d-block text-right">
+                            <button type="reset" class="btn btn-secondary btn-sm mr-1"><i class="icon-reload"></i> Reset </button>
+                        <button (click)="next()" class="btn bgTable text-white btn-sm">Next <i class="icon-arrow-right"></i></button>
+                        </div>
+                        
+                      </div>
+                     
+                      <div id="test-l-2" class="content">
+
+                        <div class="table-responsive p-2" style="border-radius: 0!important;">
+                            <table class="table table-striped text-center mb-0 table-light table-hover mt-1" id="vmsList"  datatable [dtOptions]="dtOptions">
+                              <thead class="table-dark">
+                                <tr>
+                                    <th>  Select  </th>
+                                    <th>ID</th>
+                                    <th > Playlist Name</th>
+                                    </tr>
+                                  </thead>
+                                    <tbody>
+                                     
+                                      <tr *ngFor="let d of data">
+                                          <td class="p-3"><input type="checkbox" [(ngModel)]="d.is_selected"/></td>
+                                          <td>{{d.listId}}</td>
+                                          <td class="text-left p-3" style=" padding: 0px!important;"><span class="rounded-circle  p-2 bgTable text-white border-1 border-primary m-2 text-center d-inline-block" ><i class="icon-play"></i> </span> {{d.playListId}} - {{d.description}}</td>
+                                          </tr>
+                                          </tbody>
+                                          </table>
+                                          </div>
+                        <hr class="dashed"/>
+                        <div class="d-block text-right">
+                        <button (click)="next()" class="btn bgTable text-white btn-sm">Next <i class="icon-arrow-right"></i></button>
+                        </div>
+                        </div>
+                      <div id="test-l-3" class="content">
+
+
+                        <hr class="dashed"/>
+                        <div class="d-block text-right">
+                        <button (click)="next()" class="btn bgTable text-white btn-sm">Next <i class="icon-arrow-right"></i></button>
+                        </div>
+                        </div>
+                </div>
+                </div>
+           
+                <div class="card-footer bg-light text-right">
+            
+                    <button type="reset" class="btn btn-secondary"  (click)="onReset()">Reset All</button>
+                   
+                    <!-- <button type="submit" class="btn btn-primary" >Submit</button> -->
+                  </div>
+                </form>
+                </div>
+               

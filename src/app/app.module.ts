@@ -28,6 +28,10 @@ import { PlaylistComponent } from './pages/playlist/playlist.component';
 import { PlaylistCreationModalComponent } from './playlist-creation-modal/playlist-creation-modal.component';
 import { AngularDraggableModule } from 'angular2-draggable';
 import { AppService } from './app.service';
+import { MediaAuditComponent } from './pages/media-audit/media-audit.component';
+import { MediaDetailsComponent } from './pages/media-details/media-details.component';
+import { PublishOperationComponent } from './pages/publish-operation/publish-operation.component';
+import { MediaStatusComponent } from './pages/media-status/media-status.component';
 
 
 @NgModule({
@@ -40,7 +44,7 @@ import { AppService } from './app.service';
     FooterComponent,
     SidebarComponent, 
     MapviewComponent, PublishModalComponent, AddvmsModalComponent, AddzoneModalComponent, 
-    AlertComponent, ListviewComponent, MediaClearanceComponent, MediaUploadComponent, MedialistComponent, PlaylistComponent, PlaylistCreationModalComponent
+    AlertComponent, ListviewComponent, MediaClearanceComponent, MediaUploadComponent, MedialistComponent, PlaylistComponent, PlaylistCreationModalComponent, MediaAuditComponent, MediaDetailsComponent, PublishOperationComponent, MediaStatusComponent
     
   ],
   imports: [

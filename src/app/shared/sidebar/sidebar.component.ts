@@ -47,7 +47,7 @@ export class SidebarComponent implements OnInit{
         },
         {
           link_name: "Media Clearance",
-          link: "/media-clearence",
+          link: "/media-clearance",
         },
       ]
     },
@@ -93,6 +93,21 @@ export class SidebarComponent implements OnInit{
         }, {
           link_name: "Playlist Audit",
           link: "/playlist-audit",
+        },
+      ]
+    },
+    {
+      link_name: "Publish",
+      link: "/publish-operation",
+      icon: "icon-monitor menu-icon",
+      id:"admin",
+      sub_menu: [
+        {
+          link_name: "Publish Operation",
+          link: "/publish-operation",
+        }, {
+          link_name: "Playlist Audit",
+          link: "/media-status",
         },
       ]
     },
