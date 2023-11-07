@@ -9,7 +9,7 @@ import { SelectionModel } from '@angular/cdk/collections';
   styleUrls: ['./media-status.component.css']
 })
 export class MediaStatusComponent implements OnInit {
-  active = 1;
+  activetab = 1;
   selectedItems: any[];
   savedItems : any[];
   select_all = false;

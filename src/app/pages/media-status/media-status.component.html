@@ -6,7 +6,7 @@
             <div class="card border-0  pb-0">
                 
                <div class="card-header bgTable pb-0">
-                <ul class="nav nav-tabs mb-0 border-0 mt-1 nav-pills nav-fill" id="pills-tab" role="tablist" ngbNav #nav="ngbNav" [(activeId)]="active">
+                <ul class="nav nav-tabs mb-0 border-0 mt-1 nav-pills nav-fill" id="pills-tab" role="tablist" ngbNav #mediaStatus="ngbNav" [(activeId)]="activetab">
                     <li class="nav-item" [ngbNavItem]="1">
                     <a class="nav-link text-center " data-toggle="pill" href="#Created" role="tab" aria-controls="media-upload" aria-selected="true" ngbNavLink> <i class="icon-file-add"></i> Created</a>
                     
@@ -193,7 +193,7 @@
                 
             </ul>
             </div>
-            <div [ngbNavOutlet]="nav" class="p-2 bgTable" style="border-top-right-radius: 0!important; border-top-left-radius:0!important;"></div>
+            <div [ngbNavOutlet]="mediaStatus" class="p-2 bgTable" style="border-top-right-radius: 0!important; border-top-left-radius:0!important;"></div>
 
             <!-- <div class="card-footer bg-light text-right">
            
